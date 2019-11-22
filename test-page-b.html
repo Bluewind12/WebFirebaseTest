@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>TestPageB</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-auth.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var ref = document.referrer; //前のページのURLを取得
+        if(ref.indexOf('') == -1){
+            alert('ログインしてください');
+            window.location.href = './test-page-a.html';
+        }else{
+            document.getElementById('state').innerText = ref + "2";
+        }
+    </script>
+    <header>
+        <h1>TestPage - B</h1>
+        <h2>OK</h2>
+    </header>
+
+    <p id="log">Logです。</p>
+    <p id="state"></p>
+    <input type="button" value="SignOut" onclick="signOut()" />
+    <footer>
+        <h4>幻想乃桜工房
+        </h4>
+    </footer>
+    <script src="firebase-auth.js"></script>
+</body>
+
+</html>
